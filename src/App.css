@@ -3,14 +3,30 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 1rem;
+  background-color: lightslategray;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-main-message {
+  padding: 1rem;
+  width: 100%;
+  background-color: antiquewhite;
+  color: #666;
+}
+
+.App-main-message button {
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  border-radius: 8px;
+}
+.App-main-message button:hover {
+  cursor: pointer;
 }
 
 .App-link {
