@@ -1,7 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import { LikeButton } from "./components/LikeButton"
 import "./App.css";
- 
+
 function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("inner useEffect");
+    const reset = () => {
+      console.log("inner reset function");
+      if (count > 5) {
+        setCount(0);
+        console.log("reset!!");
+      }
+    };
+    reset();
+  }, [count]);
+  console.log("\nouter useEffect");
+  console.log(count);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +27,6 @@ function App() {
       </header>
     </div>
   );
-}
-
-function LikeButton() {
-  const [count, setCount] = useState(999);
-  const handleClick = () => {
-    setCount(count + 1);
-  };
-  return <span className="likeButton" onClick={ handleClick }>♥ {count}</span>;
 }
 
 export default App;
