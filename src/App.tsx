@@ -10,18 +10,13 @@ function App() {
   const messages = ['hogehoge', 'fugafuga'];
 
   useEffect(() => {
-    console.log("inner useEffect");
     const reset = () => {
-      console.log("inner reset function");
       if (count > 5) {
         setCount(0);
-        console.log("reset!!");
       }
     };
     reset();
   }, [count]);
-  console.log("\nouter useEffect");
-  console.log(count);
 
   const toggleMessage = () => {
     messageId === 0 ? setMessageId(1) : setMessageId(0);

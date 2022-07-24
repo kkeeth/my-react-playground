@@ -3,7 +3,5 @@ type PropType = {
 }
 
 export const MyLabel = ({ message }: PropType) => {
-  console.log(message);
-
   return <p>{ message }</p>
 }
